@@ -82,10 +82,6 @@ body[data-theme="mono"]{--bg:#101214;--panel:#1b2024;--panel2:#2b3338;--text:#f5
 @media(min-width:1000px){#tool .voice-page{gap:16px}.voice-tool-grid{gap:14px}.voice-feature{min-height:142px}}
 @media(max-width:650px){.voice-page{gap:12px}.voice-hero-copy{max-width:100%}.voice-hero-art{opacity:.2;width:65%}.voice-page-hero{min-height:104px;padding:13px 14px}.voice-page-hero h2{font-size:22px}.voice-page-hero p{font-size:12px}.voice-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.voice-feature{min-height:176px;padding:12px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;border-radius:16px}.voice-feature .vf-icon{width:42px;height:42px;flex:0 0 42px;font-size:22px;border-radius:13px}.voice-feature .vf-copy{padding-right:0;width:100%}.voice-feature h3{font-size:13px;line-height:1.3;margin:0 0 5px;overflow-wrap:anywhere}.voice-feature p{font-size:11px;line-height:1.4;margin:0 0 8px}.voice-feature .vf-copy>b{font-size:11px}.voice-feature .vf-art{font-size:38px;right:8px;bottom:8px;top:auto;transform:none;opacity:.14}.voice-feature .vf-fav{right:7px;top:7px;width:24px;height:24px}.recent-items{grid-template-columns:repeat(2,minmax(0,1fr))}.recent-items button:last-child{display:none}.voice-tabs{padding-bottom:8px}.vtab{padding:9px 11px}.voice-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.voice-bottom-grid{grid-template-columns:1fr}}
 
-
-.back-smart{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:10px 16px;border-radius:13px;border:1px solid var(--line);background:linear-gradient(120deg,var(--panel2),var(--panel));color:var(--text);box-shadow:0 0 14px var(--glow);font-size:14px}
-.back-smart:active{transform:scale(.98)}
-@media(max-width:700px){.back-smart{min-height:44px;font-size:14px;margin:2px 0 8px}}
 </style>
 <style>
 /* Research & Topics cards styled to match the compact AI Writer Hub screenshot */
@@ -241,61 +237,9 @@ main{max-width:850px;padding:12px 12px 100px}.section{margin:18px 2px 9px}.secti
 @media(max-width:370px){#tool .aiw-grid,#tool .voice-hub{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){#tool .aiw-link,#tool .voice-category,#tool #toolActions .btn{transition:none}#tool .aiw-link:hover,#tool .voice-category:hover,#tool #toolActions .btn:hover{transform:none}}
 
-
-/* Creator Layers cinematic animated welcome screen */
-#cinematicWelcome{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;overflow:hidden;background:#050a08;color:#f4fff9;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;isolation:isolate;transition:opacity .65s ease,visibility .65s ease}
-#cinematicWelcome.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
-#cinematicWelcome:before{content:"";position:absolute;inset:-20%;z-index:-2;background:radial-gradient(ellipse at 22% 65%,rgba(220,176,65,.16),transparent 24%),radial-gradient(ellipse at 78% 18%,rgba(0,225,166,.13),transparent 28%),radial-gradient(ellipse at 50% 100%,rgba(0,93,68,.22),transparent 42%),linear-gradient(125deg,#030806,#10150d 52%,#03110d);animation:welcomeBg 12s ease-in-out infinite alternate}
-#cinematicWelcome:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.22;background-image:linear-gradient(rgba(120,255,207,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(120,255,207,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(transparent,#000 30%,#000 75%,transparent)}
-.cw-inner{width:min(1080px,94vw);min-height:min(620px,88dvh);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(20px,5vw,72px);padding:clamp(18px,4vw,46px);position:relative}
-.cw-brand{position:absolute;top:18px;left:clamp(18px,4vw,46px);display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.12em;color:#b7d6ca;text-transform:uppercase}
-.cw-brand-mark{width:34px;height:34px;border:1px solid #13d9a5;border-radius:11px;display:grid;place-items:center;color:#12f2b2;box-shadow:0 0 24px #00d9a633;font-size:20px}
-.cw-scene{height:430px;position:relative;display:grid;place-items:center;overflow:hidden}
-.cw-lamp{position:absolute;top:18%;left:27%;width:150px;height:220px;animation:lampFloat 5s ease-in-out infinite}
-.cw-lamp-shade{position:absolute;left:8px;top:0;width:134px;height:46px;border-radius:75px 75px 12px 12px;background:linear-gradient(180deg,#252823,#070a08 65%);border-bottom:4px solid #b4a35f;box-shadow:0 0 24px #e5c36d66}
-.cw-lightcone{position:absolute;top:39px;left:-35px;width:210px;height:205px;background:linear-gradient(180deg,#f9d97955,#e2b94b05 80%);clip-path:polygon(37% 0,63% 0,100% 100%,0 100%);filter:blur(5px);transform-origin:top;animation:lightPulse 4s ease-in-out infinite}
-.cw-lamp-stem{position:absolute;top:44px;left:72px;width:5px;height:180px;background:linear-gradient(90deg,#292d25,#77735b,#10130f)}
-.cw-lamp-base{position:absolute;bottom:0;left:35px;width:80px;height:9px;border-radius:50%;background:linear-gradient(#656452,#171a14);box-shadow:0 4px 20px #000}
-.cw-orbit{position:absolute;width:300px;height:300px;border:1px solid #b7a15c20;border-radius:50%;animation:orbitSpin 26s linear infinite}
-.cw-orbit:before,.cw-orbit:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#ffe17a;box-shadow:0 0 14px 4px #ffcf4770}.cw-orbit:before{top:22%;left:8%}.cw-orbit:after{right:8%;bottom:24%;background:#00e4b0;box-shadow:0 0 14px 4px #00e4b070}
-.cw-dust{position:absolute;inset:0;pointer-events:none}.cw-dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffdf78;box-shadow:0 0 12px 3px #f4ce5b99;animation:dustRise var(--dur,7s) linear infinite;left:var(--x);bottom:-12px;opacity:0}
-.cw-dust i:nth-child(3n){background:#00f1b7;box-shadow:0 0 12px 3px #00dba077;width:3px;height:3px}.cw-dust i:nth-child(2n){animation-delay:-3s}.cw-dust i:nth-child(3n){animation-delay:-5s}
-.cw-scene-caption{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:#b5c6b8;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
-.cw-card{position:relative;padding:clamp(24px,4vw,42px);border:1px solid #d9d0a42b;border-radius:28px;background:linear-gradient(145deg,rgba(52,53,39,.78),rgba(10,20,16,.72));box-shadow:0 24px 90px #0009,inset 0 1px #ffffff12;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);animation:cardArrive .9s cubic-bezier(.2,.8,.2,1) both}
-.cw-card:before{content:"";position:absolute;inset:-1px;border-radius:28px;padding:1px;background:linear-gradient(135deg,#d9bf6d66,transparent 35%,#00dca533);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
-.cw-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b9c8a1;margin-bottom:12px}.cw-card h2{font-size:clamp(28px,4vw,44px);line-height:1.08;margin:0 0 12px;letter-spacing:-.035em}.cw-card h2 span{color:#e7ca73;text-shadow:0 0 25px #d8b84b2c}.cw-card p{color:#c4c9b9;line-height:1.7;font-size:14px;margin:0 0 26px}.cw-status{display:flex;align-items:center;gap:8px;font-size:12px;color:#b4d4c4;margin-bottom:24px}.cw-status i{width:7px;height:7px;background:#16e6a8;border-radius:50%;box-shadow:0 0 12px #16e6a8;animation:statusPulse 1.8s infinite}
-.cw-enter{width:100%;border:0;border-radius:13px;padding:16px 18px;background:linear-gradient(100deg,#f6d55d,#e8b938);color:#17180e;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 8px 28px #d7af392a;transition:transform .2s,box-shadow .2s}.cw-enter:hover{transform:translateY(-2px);box-shadow:0 12px 32px #d7af3950}.cw-skip{display:block;margin:14px auto 0;background:none;border:0;color:#9da99c;font-size:12px;cursor:pointer;padding:8px 14px}.cw-skip:hover{color:#fff}.cw-foot{margin-top:20px;padding-top:16px;border-top:1px solid #ffffff13;display:flex;justify-content:space-between;gap:10px;color:#7f9184;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
-@keyframes welcomeBg{to{transform:translate3d(2%,-1%,0) scale(1.04);filter:hue-rotate(12deg)}}@keyframes lampFloat{50%{transform:translateY(-7px)}}@keyframes lightPulse{50%{opacity:.65;transform:scaleX(.9)}}@keyframes orbitSpin{to{transform:rotate(360deg)}}@keyframes dustRise{0%{transform:translate3d(0,0,0) scale(.5);opacity:0}12%{opacity:.9}80%{opacity:.55}100%{transform:translate3d(25px,-430px,0) scale(1.25);opacity:0}}@keyframes cardArrive{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}@keyframes statusPulse{50%{opacity:.45;box-shadow:0 0 3px #16e6a8}}
-@media(max-width:700px){.cw-inner{grid-template-columns:1fr;gap:0;padding:62px 12px 18px;min-height:100dvh;width:100%;align-content:center}.cw-brand{top:16px;left:18px}.cw-scene{height:210px;order:0}.cw-lamp{transform:scale(.68);transform-origin:top left;left:calc(50% - 52px);top:0}.cw-lightcone{opacity:.7}.cw-orbit{width:185px;height:185px}.cw-scene-caption{bottom:0;font-size:9px}.cw-card{order:1;padding:24px 22px;border-radius:22px;margin:0 6px}.cw-card h2{font-size:31px}.cw-card p{font-size:13px;margin-bottom:20px}.cw-foot{font-size:9px}}
-@media(prefers-reduced-motion:reduce){#cinematicWelcome *,#cinematicWelcome:before{animation:none!important;transition:none!important}}
-
 </style>
 </head>
 <body>
-<div id="cinematicWelcome" role="dialog" aria-modal="true" aria-label="Welcome to Creator Layers">
-  <div class="cw-inner">
-    <div class="cw-brand"><span class="cw-brand-mark">◈</span><span>Creator Layers <small style="display:block;font-size:9px;letter-spacing:.08em;margin-top:2px;color:#82998c">AI-POWERED CREATOR STUDIO</small></span></div>
-    <div class="cw-scene" aria-hidden="true">
-      <div class="cw-orbit"></div><div class="cw-lamp"><div class="cw-lightcone"></div><div class="cw-lamp-shade"></div><div class="cw-lamp-stem"></div><div class="cw-lamp-base"></div></div>
-      <div class="cw-dust"><i style="--x:8%;--dur:8s"></i><i style="--x:17%;--dur:6s"></i><i style="--x:29%;--dur:9s"></i><i style="--x:41%;--dur:7s"></i><i style="--x:53%;--dur:10s"></i><i style="--x:64%;--dur:6.5s"></i><i style="--x:75%;--dur:8.5s"></i><i style="--x:86%;--dur:7.5s"></i><i style="--x:94%;--dur:9.5s"></i><i style="--x:36%;--dur:7.2s"></i><i style="--x:68%;--dur:8.2s"></i><i style="--x:23%;--dur:6.8s"></i></div>
-      <div class="cw-scene-caption">Ideas become extraordinary</div>
-    </div>
-    <div class="cw-card">
-      <div class="cw-eyebrow">Your creative journey starts here</div>
-      <h2>Welcome <span>Back.</span></h2>
-      <p>তোমার পরবর্তী অসাধারণ ভিডিও তৈরির যাত্রা এখান থেকেই শুরু। গবেষণা, স্ক্রিপ্ট, ভয়েস ও ভিজ্যুয়াল—সবকিছু এক জায়গায়, তোমার নিজের Creator Studio-তে।</p>
-      <div class="cw-status"><i></i> YOUR STUDIO IS READY</div>
-      <button class="cw-enter" type="button" onclick="enterCreatorStudio()">Enter Creator Studio&nbsp; →</button>
-      <button class="cw-skip" type="button" onclick="enterCreatorStudio()">Skip intro</button>
-      <div class="cw-foot"><span>✦ Create with purpose</span><span>Creator Layers · 01</span></div>
-    </div>
-  </div>
-</div>
-<script>
-function enterCreatorStudio(){const w=document.getElementById('cinematicWelcome');if(!w)return;w.classList.add('is-leaving');try{sessionStorage.setItem('creatorLayersIntroSeen','1')}catch(e){}setTimeout(()=>{w.style.display='none'},680)}
-(function(){try{if(sessionStorage.getItem('creatorLayersIntroSeen')==='1'){document.addEventListener('DOMContentLoaded',()=>{const w=document.getElementById('cinematicWelcome');if(w)w.style.display='none'})}}catch(e){}})();
-</script>
-
 <div class="dashboard-shell">
 <aside class="side-panel"><div class="side-brand"><div class="side-logo">◈▶</div><div><strong>Creator <span>Layers</span></strong><small>AI-Powered Creator Studio</small></div></div><nav class="side-menu" aria-label="Main menu">
 <button onclick="page('projects');setSideActive(this)"><span class="mi">▣</span>My Projects</button>
@@ -374,10 +318,10 @@ function enterCreatorStudio(){const w=document.getElementById('cinematicWelcome'
 </section>
 <section id="settings" class="hidden"><div class="section"><h2>Settings</h2></div><div class="card"><h3>Creator Layers Preferences</h3><p class="tiny">বর্তমানে অ্যাপটি Forest Green থিমে স্থির রাখা হয়েছে। অতিরিক্ত Color Themes অপশন সরিয়ে দেওয়া হয়েছে।</p><label for="creatorName">Creator Name</label><input id="creatorName" value="Shahrukh" placeholder="তোমার নাম"><button class="btn" onclick="localStorage.setItem('creatorStudioName',document.getElementById('creatorName').value);alert('Settings saved')">Save Settings</button></div></section>
 <section id="projects" class="hidden"><div class="section"><h2>My Projects</h2><span id="count" class="tiny">Recent Projects</span></div><p class="tiny">প্রজেক্ট খুলে তার ভেতরের ফাইল ও কাজের অংশে ঢুকতে পারবে।</p><div class="recent-grid" id="recentProjectFiles"></div><div class="section"><h2>তোমার তৈরি করা প্রজেক্ট</h2><span class="tiny">লোকালি সংরক্ষিত</span></div><div class="card" id="projectList"></div><div class="card"><button class="btn alt" onclick="backup()">JSON ব্যাকআপ ডাউনলোড</button><button class="btn alt" onclick="document.getElementById('import').click()">ব্যাকআপ ইমপোর্ট</button><input id="import" type="file" accept="application/json" class="hidden" onchange="restore(event)"></div></section>
-<section id="projectDetail" class="hidden"><button class="btn alt" onclick="goBackSmart()">← ফিরে যাও</button><div class="section"><h2 id="detailTitle">Project</h2><span class="tiny">Project Workspace</span></div><p id="detailDesc" class="tiny">প্রজেক্টের ফাইলগুলো এখানে থাকবে।</p><div class="grid" id="projectFileGrid"></div><div class="card" id="projectFileContent"><h3>একটি ফাইল নির্বাচন করো</h3><p>Research, Script, Voiceover, Video Plan, Assets অথবা Notes খুলে কাজ শুরু করো।</p></div></section>
-<section id="tool" class="hidden"><button class="btn alt back-smart" onclick="goBackSmart()">← ফিরে যাও</button><div id="scriptHubSlot"></div><div class="card"><div class="eyebrow" id="kicker">TOOL</div><h2 id="toolTitle"></h2><p id="toolDesc"></p><div id="toolFields"></div><div id="toolActions"></div><div id="result" class="out" style="margin-top:12px">এখানে ফলাফল দেখাবে।</div><div id="extra"></div></div>
+<section id="projectDetail" class="hidden"><button class="btn alt" onclick="page('projects')">← My Projects</button><div class="section"><h2 id="detailTitle">Project</h2><span class="tiny">Project Workspace</span></div><p id="detailDesc" class="tiny">প্রজেক্টের ফাইলগুলো এখানে থাকবে।</p><div class="grid" id="projectFileGrid"></div><div class="card" id="projectFileContent"><h3>একটি ফাইল নির্বাচন করো</h3><p>Research, Script, Voiceover, Video Plan, Assets অথবা Notes খুলে কাজ শুরু করো।</p></div></section>
+<section id="tool" class="hidden"><button class="btn alt" onclick="page('workspace')">← Creator Workspace</button><div id="scriptHubSlot"></div><div class="card"><div class="eyebrow" id="kicker">TOOL</div><h2 id="toolTitle"></h2><p id="toolDesc"></p><div id="toolFields"></div><div id="toolActions"></div><div id="result" class="out" style="margin-top:12px">এখানে ফলাফল দেখাবে।</div><div id="extra"></div></div>
 <div id="researchHubWrap" style="display:none"><section id="researchHub" class="research-panel">
-  <div class="rp-topline"><button class="rp-back" onclick="document.body.classList.remove('research-active');document.getElementById('researchHubWrap').style.display='none';goBackSmart()">← ফিরে যাও</button><div class="rp-top-actions"><span>☼</span><span>♧</span><span>●</span></div></div>
+  <div class="rp-topline"><button class="rp-back" onclick="document.body.classList.remove('research-active');document.getElementById('researchHubWrap').style.display='none';page('workspace')">← Creator Workspace</button><div class="rp-top-actions"><span>☼</span><span>♧</span><span>●</span></div></div>
   <h2><span class="rp-heading-icon">▣</span> Research &amp; Topics</h2>
   <p class="rp-intro">বিশ্বজুড়ে সবচেয়ে সেরা থেকে আউটস্ট্যান্ডিং বিষয়গুলো খুঁজে বের করুন, তারপর নিজের গল্পের বাংলা স্ক্রিপ্ট তৈরি করে দর্শকদের কৌতূহলী করুন।</p>
   <div class="rp-controls"><span class="rp-search-icon">⌕</span>
@@ -486,10 +430,7 @@ other:["Other Features","Creator Studio AI-এর কাজে লাগতে �
 };
 let current="";
 function openCreatorToolkit(){page("workspace");setTimeout(()=>{const h=document.querySelector("#workspace .section");if(h)h.scrollIntoView({behavior:"smooth",block:"start"})},40)}
-let appPageHistory=[];let currentAppPage=null;
-function page(id,fromBack=false){if(!fromBack&&currentAppPage&&currentAppPage!==id){appPageHistory.push(currentAppPage);if(appPageHistory.length>30)appPageHistory.shift()}currentAppPage=id;["home","workspace","projects","projectDetail","tool","settings"].forEach(x=>{const el=document.getElementById(x);if(el)el.classList.toggle("hidden",x!==id)});const showcase=document.getElementById("dashboardShowcase");if(showcase)showcase.style.display=(id==="home")?"block":"none";const brand=document.querySelector(".brand-header");if(brand)brand.style.display=(id==="home")?"block":"none";document.querySelectorAll(".nav [data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));if(id==="projects")renderProjects();if(id==="projectDetail")renderProjectDetail();scrollTo(0,0)}
-function goBackSmart(){const fallback=currentAppPage==="projectDetail"?"projects":(currentAppPage==="tool"?"workspace":"home");let target=appPageHistory.pop();if(!target||target===currentAppPage)target=fallback;page(target,true)}
-window.addEventListener("keydown",e=>{if(e.key==="Escape"){const visible=["tool","projectDetail","projects","workspace","settings"].find(id=>!document.getElementById(id)?.classList.contains("hidden"));if(visible)goBackSmart()}});
+function page(id){["home","workspace","projects","projectDetail","tool","settings"].forEach(x=>{const el=document.getElementById(x);if(el)el.classList.toggle("hidden",x!==id)});const showcase=document.getElementById("dashboardShowcase");if(showcase)showcase.style.display=(id==="home")?"block":"none";const brand=document.querySelector(".brand-header");if(brand)brand.style.display=(id==="home")?"block":"none";document.querySelectorAll(".nav [data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===id));if(id==="projects")renderProjects();if(id==="projectDetail")renderProjectDetail();scrollTo(0,0)}
 function openTool(k){current=k;const d=defs[k];document.getElementById("toolTitle").textContent=d[0];document.getElementById("toolDesc").textContent=d[1];document.getElementById("kicker").textContent="CREATOR TOOL";const fields=document.getElementById("toolFields"),actions=document.getElementById("toolActions");if(k==="other"){fields.innerHTML="";actions.innerHTML=`<div class="research-panel other-features-panel"><div class="rp-sites other-feature-sites"><a class="rp-site" href="https://n8n.io/" target="_blank" rel="noopener"><span class="other-feature-icon">⚡</span><h4>n8n</h4><p>AI অটোমেশন</p><span class="rp-site-link">খুলুন ↗</span></a><a class="rp-site" href="https://arena.ai/" target="_blank" rel="noopener"><span class="other-feature-icon">⚖️</span><h4>LM Arena</h4><p>টেক্সট উত্তর তুলনা</p><span class="rp-site-link">খুলুন ↗</span></a><a class="rp-site" href="https://yupp.ai/" target="_blank" rel="noopener"><span class="other-feature-icon">🖼️</span><h4>Yupp.ai</h4><p>ইমেজ তৈরি ও তুলনা</p><span class="rp-site-link">খুলুন ↗</span></a><a class="rp-site" href="https://openai.com/index/sora-2/" target="_blank" rel="noopener"><span class="other-feature-icon">🎬</span><h4>Sora 2</h4><p>ভিডিও AI তথ্য</p><span class="rp-site-link">অফিশিয়াল ↗</span></a></div></div>`;document.getElementById("result").textContent="প্রয়োজনীয় টুলের কার্ডে ক্লিক করে ওয়েবসাইট খুলুন।";document.getElementById("extra").innerHTML="";}else if(k==="voice"){fields.innerHTML="";actions.innerHTML=`<div class="voice-page">
 <div class="voice-page-hero"><div class="voice-hero-icon">▥</div><div class="voice-hero-copy"><span class="voice-kicker">CREATOR AUDIO LAB</span><h2>Voice & Music</h2><p>উন্নতমানের ভয়েস, অডিও টুল, মিউজিক এবং সাউন্ড ইফেক্টস — আপনার কনটেন্টকে করে তুলুন আরও প্রাণবন্ত!</p></div><div class="voice-hero-art" aria-hidden="true"><div class="hero-wave">▂▅▇▃▆█▃▅▇▂▆▃▇▅▂</div><div class="hero-mic">🎙</div><span class="music-note note-one">♫</span><span class="music-note note-two">♪</span></div></div>
 <div class="voice-search"><span>⌕</span><input id="voiceSearch" placeholder="টুল খুঁজুন, যেমন: voice cleaner, music, recording..." oninput="filterVoiceCards()"><kbd>Ctrl + K</kbd></div>
@@ -876,33 +817,6 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
     navigator.serviceWorker.register("./sw.js").catch(err => console.warn("Offline support unavailable:", err));
   });
 }
-</script>
-
-
-<script>
-/* External-link navigation guard for Android local-file launches.
-   Keep Creator Studio open in its original tab and open external websites separately. */
-(function(){
-  function isExternal(url){ try { const u=new URL(url, location.href); return /^https?:$/.test(u.protocol) && u.origin !== location.origin; } catch(e){ return false; } }
-  document.addEventListener('click', function(ev){
-    const a=ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
-    if(!a || a.hasAttribute('download')) return;
-    const href=a.getAttribute('href');
-    if(!href || !isExternal(href)) return;
-    ev.preventDefault(); ev.stopPropagation();
-    /* Explicitly create a separate browsing context; do not replace the local app page. */
-    const w=window.open(a.href, '_blank');
-    if(!w){
-      const note=document.getElementById('externalLinkNotice');
-      if(note){ note.style.display='block'; note.textContent='ওয়েবসাইটটি নতুন ট্যাবে খোলার অনুমতি বন্ধ আছে। Chrome-এর pop-up/new-tab অনুমতি চালু করে আবার চেষ্টা করো।'; }
-    }
-  }, true);
-  window.addEventListener('DOMContentLoaded', function(){
-    if(!document.getElementById('externalLinkNotice')){
-      const n=document.createElement('div'); n.id='externalLinkNotice'; n.style.cssText='display:none;position:fixed;left:12px;right:12px;bottom:72px;z-index:99999;padding:12px 14px;border:1px solid #00d9a6;border-radius:12px;background:#06251f;color:#eafff8;font:14px/1.5 system-ui,sans-serif;box-shadow:0 8px 24px #0008'; document.body.appendChild(n);
-    }
-  });
-})();
 </script>
 
 </body>
